@@ -1,0 +1,324 @@
+*, *::after, *::before {
+    margin: 0;
+    padding: 0;
+    border: 0;
+    outline: 0;
+    text-decoration: none;
+    list-style: none;
+    box-sizing: border-box;
+    scroll-behavior: smooth;
+    background-color: #f7f7f7;
+}
+
+header {
+    overflow: hidden;
+}
+
+header::-webkit-scrollbar {
+    display: none;
+}
+
+
+:root {
+    --color-orange: #FF5E1E;
+    --color-black: black;
+}
+
+
+/** 
+    SETTINGS
+**/
+a {
+    text-decoration: none;
+    color: var(--color-black);
+    transition: 400ms ease-in-out;
+}
+
+a:hover {
+    color: var(--color-orange);
+}
+
+
+@font-face {
+    font-family:'Vogue';
+    src: url('fonts/Vogue.ttf');
+}
+
+@font-face {
+    font-family:'StretchPro';
+    src: url('fonts/StretchPro.otf');
+}
+
+h1 {
+    font: 4.2rem 'Vogue', sans-serif;
+}
+
+p {
+    font: 1.5rem 'StretchPro', sans-serif;
+}
+
+img {
+    width: 100%;
+    display: block;
+    object-fit: cover;
+    cursor: pointer;
+}
+
+
+
+
+/** 
+    NAVIGATION BAR
+**/
+nav {
+    background: #f7f7f7;
+    width: 100vw;
+    height: 5rem;
+    position: fixed;
+    top: 0;
+    z-index: 11;
+}
+
+.menu {
+    width: 90%;
+}
+
+.nav__container {
+    height: 100%;
+    margin: 0 auto;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.nav__container .logo img{
+    width: 100px;
+    height: auto;
+}
+
+.nav__container .hamburger img{
+    width: 40px;
+    height: auto;
+}
+
+
+
+
+/** 
+    HEADER / HERO SECTION
+**/
+header {
+    position: relative;
+    top: 5rem;
+    height: 90vh;
+    margin-left: 5%;
+    margin-bottom: 2rem;
+}
+
+.grid__container {
+    display: grid;
+    grid-template-columns: 40% 60%;
+    gap: 1rem;
+}
+
+
+
+/** 
+    HERO LEFT
+**/
+.hero__left {
+    position: relative;
+    top: 20%;
+}
+
+.grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 1rem;
+    margin-top: 3rem;
+}
+
+.grid__left {
+    margin-left: 2px;
+}
+
+.discover {
+    margin-bottom: 16rem;
+}
+
+.discover p a {
+    transition: 400ms ease-in-out;
+}
+
+.discover p a:hover {
+    text-shadow: -2px 2px 3px white;
+}
+
+
+.discover p a span {
+    padding: 1rem 0 1rem;
+    background-color: var(--color-orange);
+    border-radius: 100%;
+}
+
+.arrows img {
+    width: 22px;
+    animation: arrowAnim 1s infinite alternate-reverse;
+}
+
+
+
+
+/** 
+    HERO RIGHT
+**/
+.grid__images {
+    display: grid;
+    grid-template-columns: 55% 45%;
+    gap: 1rem;
+}
+
+.hero__img02 img {
+    height: 96%;
+}
+
+.hero__img03 {
+    margin-top: 22%;
+}
+
+.social {
+    margin-top: 2rem;
+    margin-bottom: 2rem;
+}
+
+.grid__right img:hover, .hero__img02 img:hover, .hero__img03 img:hover {
+    animation: imageAnim 0.3s infinite alternate-reverse;
+} 
+
+
+
+
+@keyframes arrowAnim {
+    to {
+        transform: translateY(20px);
+    }
+}
+
+@keyframes imageAnim {
+    to {
+        transform: translateY(5px);
+    }
+}
+
+
+/** MEDIA QUERIES (LAPTOP) **/
+@media screen and (max-width: 1024px) {
+    h1 {
+        font-size: 2.5rem;
+    }
+    
+    p {
+        font-size: 1rem;
+    }
+
+    .discover {
+        margin-bottom: 8rem;
+    }
+}
+
+
+/** MEDIA QUERIES (TABLET - SMALL) **/
+@media screen and (max-width: 768px) {
+    .menu {
+        width: 94%;
+    }
+
+    header {
+        margin-left: 3%;
+        overflow-y: scroll;
+    }
+
+    .grid__container {
+        margin-top: 15%;
+        grid-template-columns: 1fr;
+        gap: 2rem;
+    }
+
+    h1 {
+        font-size: 4rem;
+    }
+    
+    p {
+        font-size: 1.5rem;
+    }
+
+    .hero__left {
+        top: 0;
+    }
+
+    .discover {
+        margin-bottom: 10rem;
+    }
+
+    .arrows img {
+        margin-left: 10%;
+    }
+
+    .grid {
+        grid-template-columns: 45% 55%;
+    }
+}
+
+
+/** MEDIA QUERIES (TABLET - SMALL) **/
+@media screen and (max-width: 426px) {
+    h1 {
+        font-size: 3.8rem;
+    }
+    
+    p {
+        font-size: 1rem;
+    }
+}
+
+
+/** MEDIA QUERIES (TABLET - SMALL) **/
+@media screen and (max-width: 376px) {
+    h1 {
+        text-align: center;
+        padding-bottom: 8px;
+    }
+
+    h1 span {
+        border-bottom: 3px solid var(--color-black);
+    }
+
+    .discover {
+        margin-bottom: 2rem;
+        text-align: center;
+    }
+
+    .grid {
+        grid-template-columns: 1fr;
+    }
+
+    .arrows img {
+        margin: 0 auto;
+    }
+
+    .grid__right {
+        margin-top: 2rem;
+    }
+
+    .grid__images {
+        grid-template-columns: 1fr;
+    }
+
+    .hero__img03 {
+        margin-top: unset;
+    }
+
+    .social p {
+        margin-bottom: 1rem;
+    }
+}
