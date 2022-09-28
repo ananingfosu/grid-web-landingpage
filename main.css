@@ -150,6 +150,10 @@ header {
     transition: 400ms ease-in-out;
 }
 
+.discover p a:hover {
+    color: var(--color-black);
+}
+
 .discover p a span {
     padding: 1rem 0 1rem;
     background-color: var(--color-orange);
