@@ -151,6 +151,10 @@ header {
 }
 
 .discover p a:hover {
+    text-decoration: underline;
+}
+
+.discover p a:hover {
     color: var(--color-black);
 }
 
